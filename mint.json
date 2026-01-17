@@ -1,29 +1,29 @@
 {
     "$schema": "https://mintlify.com/schema.json",
-    "name": "Hux Verification",
+    "name": "NFI Clear",
     "logo": {
         "light": "/logo/light.svg",
         "dark": "/logo/dark.svg"
     },
     "favicon": "/favicon.png",
     "colors": {
-        "primary": "#0F172A",
-        "light": "#38BDF8",
-        "dark": "#0EA5E9",
+        "primary": "#16A34A",
+        "light": "#4ADE80",
+        "dark": "#15803D",
         "anchors": {
-            "from": "#0F172A",
-            "to": "#38BDF8"
+            "from": "#16A34A",
+            "to": "#4ADE80"
         }
     },
     "topbarLinks": [
         {
             "name": "Support",
-            "url": "mailto:support@hux.com"
+            "url": "mailto:support@nficlear.com"
         }
     ],
     "topbarCtaButton": {
         "name": "Dashboard",
-        "url": "https://app.hux.com"
+        "url": "https://app.nficlear.com"
     },
     "primaryTab": {
         "name": "Documentation"
@@ -38,7 +38,7 @@
         {
             "name": "Community",
             "icon": "discord",
-            "url": "https://discord.gg/hux"
+            "url": "https://discord.gg/nficlear"
         }
     ],
     "navigation": [
@@ -60,7 +60,7 @@
         }
     ],
     "footerSocials": {
-        "x": "https://x.com/hux",
-        "github": "https://github.com/hux"
+        "x": "https://x.com/nficlear",
+        "github": "https://github.com/nficlear"
     }
 }
