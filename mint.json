@@ -1,0 +1,66 @@
+{
+    "$schema": "https://mintlify.com/schema.json",
+    "name": "Hux Verification",
+    "logo": {
+        "light": "/logo/light.svg",
+        "dark": "/logo/dark.svg"
+    },
+    "favicon": "/favicon.png",
+    "colors": {
+        "primary": "#0F172A",
+        "light": "#38BDF8",
+        "dark": "#0EA5E9",
+        "anchors": {
+            "from": "#0F172A",
+            "to": "#38BDF8"
+        }
+    },
+    "topbarLinks": [
+        {
+            "name": "Support",
+            "url": "mailto:support@hux.com"
+        }
+    ],
+    "topbarCtaButton": {
+        "name": "Dashboard",
+        "url": "https://app.hux.com"
+    },
+    "primaryTab": {
+        "name": "Documentation"
+    },
+    "tabs": [
+        {
+            "name": "API Reference",
+            "url": "api-reference"
+        }
+    ],
+    "anchors": [
+        {
+            "name": "Community",
+            "icon": "discord",
+            "url": "https://discord.gg/hux"
+        }
+    ],
+    "navigation": [
+        {
+            "group": "Get Started",
+            "pages": [
+                "introduction",
+                "quickstart",
+                "authentication"
+            ]
+        },
+        {
+            "group": "Verification API",
+            "pages": [
+                "api-reference/generate-link",
+                "api-reference/get-status",
+                "api-reference/webhooks"
+            ]
+        }
+    ],
+    "footerSocials": {
+        "x": "https://x.com/hux",
+        "github": "https://github.com/hux"
+    }
+}

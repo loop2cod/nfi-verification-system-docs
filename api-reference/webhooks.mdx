@@ -1,0 +1,39 @@
+---
+title: "Webhooks"
+description: "Listen for real-time updates."
+---
+
+Hux sends webhooks to your configured URL whenever a verification status changes.
+
+## Verifying Webhooks
+
+Hux signs every webhook request with an HMAC SHA-256 signature to allow you to verify that the request came from us.
+
+The signature is sent in the `X-Hub-Signature` header.
+It is generated using your **Webhook Secret** (available in the Dashboard) and the raw JSON body of the request.
+
+```typescript Node.js Example
+const crypto = require('crypto');
+
+const signature = req.headers['x-hub-signature'];
+const hmac = crypto.createHmac('sha256', WEBHOOK_SECRET);
+const digest = 'sha256=' + hmac.update(JSON.stringify(req.body)).digest('hex');
+
+if (signature === digest) {
+  // Verified!
+}
+```
+
+## Events
+
+<ParamField body="event" type="string">
+  The type of event. e.g. `verification.approved`, `verification.rejected`.
+</ParamField>
+
+<ParamField body="verificationId" type="string">
+  The ID of the verification session.
+</ParamField>
+
+<ParamField body="data" type="object">
+  The payload data associated with the event.
+</ParamField>

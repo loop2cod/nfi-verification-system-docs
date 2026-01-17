@@ -1,0 +1,21 @@
+---
+title: "Authentication"
+description: "How to authenticate your API requests"
+---
+
+The Hux API uses API keys to authenticate requests. You can view and manage your API keys in the [Dashboard](https://app.hux.com/settings/api-keys).
+
+## API Keys
+
+Your API keys carry many privileges, so be sure to keep them secure! Do not share your secret API keys in publicly accessible areas such as GitHub, client-side code, and so forth.
+
+### Usage
+
+Authentication to the API is performed via HTTP Basic Auth. Provide your API key as the basic auth username value. You do not need to provide a password.
+
+Alternatively, you can authenticate via the `x-api-key` header.
+
+```bash
+curl https://api.hux.com/api/v1/external/status/123 \
+  -H "x-api-key: sk_test_..."
+```

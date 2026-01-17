@@ -1,0 +1,43 @@
+---
+title: "Get Status"
+api: "GET https://api.hux.com/api/v1/external/status/{verificationId}"
+description: "Check the status of a verification session."
+---
+
+### Path Parameters
+
+<ParamField path="verificationId" type="string" required>
+  The unique ID of the verification session.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates if the call was successful.
+</ResponseField>
+
+<ResponseField name="status" type="string">
+  The current status. One of: `PENDING`, `IN_PROGRESS`, `APPROVED`, `REJECTED`, `ACTION_REQUIRED`.
+</ResponseField>
+
+<ResponseField name="currentStep" type="string">
+  The current step the user is on (e.g., `INIT`, `DOCUMENT_UPLOAD`).
+</ResponseField>
+
+<RequestExample>
+```bash Example Request
+curl --request GET \
+  --url https://api.hux.com/api/v1/external/status/a1b2c3d4e5f6 \
+  --header 'x-api-key: <api-key>'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+  "success": true,
+  "status": "APPROVED",
+  "currentStep": "COMPLETED"
+}
+```
+</ResponseExample>
