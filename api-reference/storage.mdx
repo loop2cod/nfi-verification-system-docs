@@ -1,0 +1,44 @@
+---
+title: "Get Upload URL"
+api: "POST https://api.nfi-clear.com/v1/storage/presigned-url"
+description: "Generate a secure presigned URL for direct file uploads."
+---
+
+## Body
+
+<ParamField body="fileName" type="string" required>
+  The name of the file to be uploaded.
+</ParamField>
+
+<ParamField body="fileType" type="string" required>
+  The MIME type of the file (e.g., `image/jpeg`).
+</ParamField>
+
+<ParamField body="folder" type="string" required>
+  The destination folder (e.g., `kyc-documents`).
+</ParamField>
+
+## Response
+
+<ResponseField name="signedUrl" type="string">
+  The secure URL to PUT the file content to.
+</ResponseField>
+
+<ResponseField name="publicUrl" type="string">
+  The accessible public URL (if public) or internal reference.
+</ResponseField>
+
+<RequestExample>
+
+```bash cURL
+curl -X POST https://api.nfi-clear.com/v1/storage/presigned-url \
+  -H "Authorization: Bearer <token>" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "fileName": "passport.jpg",
+    "fileType": "image/jpeg",
+    "folder": "kyc-documents"
+  }'
+```
+
+</RequestExample>

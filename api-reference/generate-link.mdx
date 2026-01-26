@@ -1,54 +1,45 @@
 ---
-title: "Generate Link"
-api: "POST https://api.hux.com/api/v1/external/generate-link"
-description: "Create a new verification session and get a unique link for your user."
+title: "Generate Verification Link"
+api: "POST https://api.nfi-clear.com/v1/generate-link"
+description: "Create a new verification session and get a hosted link for your user."
 ---
 
-### Body
+## Body
 
 <ParamField body="type" type="string" required>
-  The type of verification to perform. derived from `KYC_INDIVIDUAL` or `KYB_CORPORATE`.
+  The type of verification flow. Must be `KYC_INDIVIDUAL` or `KYB_CORPORATE`.
 </ParamField>
 
 <ParamField body="metadata" type="object">
-  Key-value pairs of additional information you want to store with this verification (e.g., your internal user ID).
+  Optional key-value pairs to store custom data (e.g., `userId`, `email`) associated with this verification.
 </ParamField>
 
-### Response
+## Response
 
 <ResponseField name="success" type="boolean">
-  Indicates if the call was successful.
+  Indicates if the request was successful.
 </ResponseField>
 
 <ResponseField name="verificationId" type="string">
-  The unique ID for this verification session.
+  The unique 16-character hex ID for the session.
 </ResponseField>
 
 <ResponseField name="url" type="string">
-  The URL you should redirect your user to.
+  The fully constructed URL to redirect your user to (e.g., `https://nfi-clear.com/verify/...`).
 </ResponseField>
 
 <RequestExample>
-```bash Example Request
-curl --request POST \
-  --url https://api.hux.com/api/v1/external/generate-link \
-  --header 'Content-Type: application/json' \
-  --header 'x-api-key: <api-key>' \
-  --data '{
-  "type": "KYC_INDIVIDUAL",
-  "metadata": {
-    "userId": "user_123"
-  }
-}'
-```
-</RequestExample>
 
-<ResponseExample>
-```json Response
-{
-  "success": true,
-  "verificationId": "a1b2c3d4e5f6",
-  "url": "https://verify.hux.com/verify/a1b2c3d4e5f6"
-}
+```bash cURL
+curl -X POST https://api.nfi-clear.com/v1/generate-link \
+  -H "Authorization: Bearer <token>" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "type": "KYC_INDIVIDUAL",
+    "metadata": {
+      "userId": "user_123"
+    }
+  }'
 ```
-</ResponseExample>
+
+</RequestExample>

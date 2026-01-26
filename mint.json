@@ -2,65 +2,45 @@
     "$schema": "https://mintlify.com/schema.json",
     "name": "NFI Clear",
     "logo": {
-        "light": "/logo/light.svg",
-        "dark": "/logo/dark.svg"
+        "dark": "/logo/dark.svg",
+        "light": "/logo/light.svg"
     },
     "favicon": "/favicon.png",
     "colors": {
-        "primary": "#16A34A",
-        "light": "#4ADE80",
-        "dark": "#15803D",
-        "anchors": {
-            "from": "#16A34A",
-            "to": "#4ADE80"
-        }
+        "primary": "#3B82F6",
+        "light": "#60A5FA",
+        "dark": "#1E3A8A",
+        "anchors": "#3B82F6"
     },
     "topbarLinks": [
         {
-            "name": "Support",
-            "url": "mailto:support@nficlear.com"
+            "name": "Dashboard",
+            "url": "http://localhost:3000/login"
         }
     ],
     "topbarCtaButton": {
-        "name": "Dashboard",
-        "url": "https://app.nficlear.com"
+        "type": "github",
+        "url": "https://github.com/nfi-clear/sdk"
     },
-    "primaryTab": {
-        "name": "Documentation"
-    },
-    "tabs": [
-        {
-            "name": "API Reference",
-            "url": "api-reference"
-        }
-    ],
-    "anchors": [
-        {
-            "name": "Community",
-            "icon": "discord",
-            "url": "https://discord.gg/nficlear"
-        }
-    ],
     "navigation": [
         {
             "group": "Get Started",
             "pages": [
                 "introduction",
-                "quickstart",
                 "authentication"
             ]
         },
         {
-            "group": "Verification API",
+            "group": "API Reference",
             "pages": [
-                "api-reference/generate-link",
-                "api-reference/get-status",
-                "api-reference/webhooks"
+                "api-reference/verify",
+                "api-reference/storage"
             ]
         }
     ],
     "footerSocials": {
         "x": "https://x.com/nficlear",
-        "github": "https://github.com/nficlear"
+        "github": "https://github.com/nficlear",
+        "linkedin": "https://linkedin.com/company/nficlear"
     }
 }
