@@ -33,7 +33,7 @@
         {
             "group": "API Reference",
             "pages": [
-                "api-reference/verify",
+                "api-reference/generate-link",
                 "api-reference/storage"
             ]
         }
